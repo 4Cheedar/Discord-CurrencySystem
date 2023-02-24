@@ -8,7 +8,6 @@ const { Guilds, GuildMembers, GuildMessages } = GatewayIntentBits;
 const { User, Message, GuildMember, ThreadMember } = Partials;
 const dotenv = require("dotenv");
 const console = require("console-emoji-log");
-const mongoose = require("mongoose");
 const CurrencySystem = require("currency-system");
 dotenv.config();
 
