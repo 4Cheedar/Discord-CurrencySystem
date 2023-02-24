@@ -1,0 +1,5 @@
+.env
+node_modules
+configGeral.json
+configBot.json
+discloud.config
