@@ -11,6 +11,7 @@ const db = new QuickDB({
   filePath: "QuickDB/Registros/registroGeral.sqlite",
   table: "REGISTROS",
 });
+const wait = require("node:timers/promises").setTimeout;
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -22,6 +23,9 @@ module.exports = {
    * @param {Client} client
    */
   async execute(interaction) {
+    await interaction.deferReply({ ephemeral: true });
+    await wait(2000);
+
     let dinheiro = await cs.balance({
       user: interaction.user,
       guild: interaction.guild.id,
@@ -73,7 +77,7 @@ module.exports = {
       "CarteiraCurrency.png"
     );
 
-    return interaction.reply({
+    return interaction.editReply({
       content: `${dinheiro.wallet} | ${dinheiro.bank}`,
       files: [imgCarteira],
       ephemeral: true,
