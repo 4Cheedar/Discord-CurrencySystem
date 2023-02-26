@@ -1,11 +1,9 @@
 const { SlashCommandBuilder, AttachmentBuilder } = require("discord.js");
-const console = require("console-emoji-log");
 const CurrencySystem = require("currency-system");
 const cs = new CurrencySystem();
 const { createCanvas, Canvas, loadImage, registerFont } = require("canvas");
 
 module.exports = {
-  developer: true,
   data: new SlashCommandBuilder()
     .setName("loja")
     .setDescription("Mostra os itens da Loja"),
@@ -16,13 +14,11 @@ module.exports = {
    */
   async execute(interaction) {
     await interaction.deferReply({
-      /* ephemeral: true */
+      ephemeral: true,
     });
     let result = await cs.getShopItems({
       guild: interaction.guild,
     });
-
-    let arr = [];
 
     const canvas = createCanvas(800, 450);
     const ctx = canvas.getContext("2d");
@@ -40,6 +36,8 @@ module.exports = {
     let pos1 = 75;
     let pos2 = 120;
     let posDin = 260;
+
+    //let arr = [];
 
     for (let key in result.inventory) {
       let itemAdd = await loadImage(
@@ -65,7 +63,7 @@ module.exports = {
         }
       }
 
-      arr.push({
+      /* arr.push({
         name: `${parseInt(key)} - **${result.inventory[key].name}**, preço: $${
           result.inventory[key].price
         }`,
@@ -74,15 +72,14 @@ module.exports = {
         position1: pos1,
         position2: pos2,
         positionDin: posDin,
-      });
+      }); */
     }
 
-    console.log(arr);
+    //console.log(arr);
 
     var imgShop = new AttachmentBuilder(canvas.toBuffer(), "ShopItens.png");
 
     return interaction.editReply({
-      content: `> Bom dia!`,
       files: [imgShop],
       ephemeral: true,
     });
