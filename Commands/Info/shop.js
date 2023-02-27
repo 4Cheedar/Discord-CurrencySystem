@@ -13,9 +13,7 @@ module.exports = {
    * @param {Client} client
    */
   async execute(interaction) {
-    await interaction.deferReply({
-      ephemeral: true,
-    });
+    await interaction.deferReply();
     let result = await cs.getShopItems({
       guild: interaction.guild,
     });
@@ -33,55 +31,47 @@ module.exports = {
 
     ctx.drawImage(planoFundo, 0, 0, canvas.width, canvas.height);
 
-    let pos1 = 75;
-    let pos2 = 120;
-    let posDin = 260;
-
-    //let arr = [];
+    let pos1 = 18;
+    let pos2 = 95;
+    let posDin = 205;
+    let posID = 120;
 
     for (let key in result.inventory) {
       let itemAdd = await loadImage(
         `./CurrencyImages/ItensLoja/${result.inventory[key].name}.png`
       );
 
-      ctx.drawImage(itemAdd, pos1, pos2, 115, 115);
+      ctx.drawImage(itemAdd, pos1, pos2, 75, 75);
 
-      //Dinheiro na Carteira
       ctx.font = '20px "Minecraftia"';
       ctx.fillStyle = "#228B22";
       ctx.fillText(`$ ${result.inventory[key].price}`, pos1, posDin);
 
-      pos1 += 150;
+      ctx.font = '20px "Minecraftia"';
+      ctx.fillStyle = "#FFFFFF";
+      ctx.fillText(`${parseInt(key) + 1}`, pos1, posID);
 
-      if (key >= 3) {
-        pos2 = 270;
-        posDin = 410;
-        pos1 = 75;
-
-        if (key >= 4) {
-          pos1 += 150;
-        }
+      if (key == 2 || key == 8 || key == 14) {
+        pos1 += 160;
+      } else if (key == 5) {
+        pos2 = 215;
+        pos1 = 18;
+        posDin = 325;
+        posID = 242;
+      } else if (key == 11) {
+        pos2 = 335;
+        pos1 = 18;
+        posDin = 447;
+        posID = 360;
+      } else {
+        pos1 += 130;
       }
-
-      /* arr.push({
-        name: `${parseInt(key)} - **${result.inventory[key].name}**, preço: $${
-          result.inventory[key].price
-        }`,
-        description: "Descrição: " + result.inventory[key].description,
-        urlImg: `./CurrencyImages/ItensLoja/${result.inventory[key].name}.png`,
-        position1: pos1,
-        position2: pos2,
-        positionDin: posDin,
-      }); */
     }
-
-    //console.log(arr);
 
     var imgShop = new AttachmentBuilder(canvas.toBuffer(), "ShopItens.png");
 
     return interaction.editReply({
       files: [imgShop],
-      ephemeral: true,
     });
   },
 };
