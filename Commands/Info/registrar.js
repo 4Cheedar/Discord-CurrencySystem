@@ -1,8 +1,24 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+
+// * === Quick.db - Database! ===
 const { QuickDB } = require("quick.db");
+
+// * = Tabela de Registros Geral =
 const db = new QuickDB({
   filePath: "QuickDB/Registros/registroGeral.sqlite",
   table: "REGISTROS",
+});
+
+// * = Tabela de Status do Player =
+const dbUserStatus = new QuickDB({
+  filePath: "QuickDB/StatusPlayers/statusPlayers.sqlite",
+  table: "PLAYERS_STATUS",
+});
+
+// * = Tabela de Wallpapers do Player =
+const dbLojaWallpapers = new QuickDB({
+  filePath: "QuickDB/LojaWallpapers/wallpapersShop.sqlite",
+  table: "SHOP_WALLPAPERS",
 });
 
 module.exports = {
@@ -49,6 +65,18 @@ module.exports = {
       userNick: `${nicknameRegister}`,
       userRegister: true,
     });
+
+    await dbUserStatus.set(`userStatus-${interaction.user.id}`, {
+      userVida: 100,
+      userArmadura: 100,
+      userDano: 10,
+    });
+
+    await dbLojaWallpapers.set(`userWallpapers-${interaction.user.id}`, {
+      usingWallpaper: "bg-default.png",
+      ownedWallpapers: [],
+    });
+
     await db.push(
       `allUserInfo.userId`,
       `${interaction.user.id} - ${interaction.user.tag}`
