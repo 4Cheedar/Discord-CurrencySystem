@@ -14,7 +14,6 @@ const fs = require("fs");
 const wallpapersPaste = "./CurrencyImages/BackgroundsShop";
 
 module.exports = {
-  developer: true,
   data: new SlashCommandBuilder()
     .setName("comprar")
     .setDescription("Comprar algum item da loja!")
