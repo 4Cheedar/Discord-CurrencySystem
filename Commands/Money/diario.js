@@ -37,11 +37,11 @@ module.exports = {
         .addFields([
           {
             name: "💵 | Dinheiro Ganho:",
-            value: `R$${diario.amount}`,
+            value: `\`\`\`R$ ${diario.amount}\`\`\``,
           },
           {
             name: "💰| Recompensas Diarias Coletadas:",
-            value: `${diario.rawData.streak.daily}`,
+            value: `\`\`\`${diario.rawData.streak.daily} \`\`\``,
           },
         ]);
       interaction.reply({ embeds: [embedDiario], ephemeral: true });
