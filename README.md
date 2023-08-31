@@ -6,7 +6,7 @@
 
 ## 🕹️ What is the function of this bot?
 
-A Bot fully focused on an economy system using **MongoDB** and **Quick.DB** and image manipulation using **Canvas**, with an integration with the **Minecraft** server consuming a ** API**, making it possible to send items and money to the **Server**, in addition to custom commands.
+A Bot fully focused on an economy system using **MongoDB** and **Quick.DB** and image manipulation using **Canvas**, with an integration with the **Minecraft** server consuming a **API**, making it possible to send items and money to the **Server**, in addition to custom commands.
 
 ## 🛠️ Tools Used
 
