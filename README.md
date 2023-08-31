@@ -1,29 +1,29 @@
-## 💸 | TotalCraft Currency-System!
+## 💸 | TotalCraft currency system!
 
-# Sistema de Economia para o servidor TotalCraft 🤖
+# Economy system for TotalCraft server 🤖
 
-<img src="https://camo.githubusercontent.com/d55d8a7f07a103454ebb77b653d9600ce27e011f78395d9713b432c8c011c76a/68747470733a2f2f646973636f72642e6a732e6f72672f7374617469632f6c6f676f2e737667">
+<img src = "https://camo.githubusercontent.com/d55d8a7f07a103454ebb77b653d9600ce27e011f78395d9713b432c8c011c76a/68747470733a2f2f646973636f72642e6a732 e6 f72672f7374617469632f6c6f676f2e737667">
 
-## 🕹️ Qual a Função desse Bot?
+## 🕹️ What is the function of this bot?
 
-Um Bot totalmente focado em um sistema de economia utilizando **MongoDB** e **Quick.DB** e manipulação de imagem utilizando **Canvas**, com uma integração com o servidor de **Minecraft** consumindo uma **API**, possibilitando enviar itens e dinheiro para o **Servidor**, alem de comandos personalizados.
+A Bot fully focused on an economy system using **MongoDB** and **Quick.DB** and image manipulation using **Canvas**, with an integration with the **Minecraft** server consuming a ** API**, making it possible to send items and money to the **Server**, in addition to custom commands.
 
-## 🛠️ Ferramentas Utilizadas
+## 🛠️ Tools Used
 
-- [Discord.JS](https://www.npmjs.com/package/discord.js?source=post_page-----7b5fe27cb6fa----------------------)
+- [Discord.JS](https://www.npmjs.com/package/discord.js?source=post_page-----7b5fe27cb6fa------------------ ----)
 - [MongoDB](https://www.npmjs.com/package/mongoose)
 - [Quick.db](https://www.npmjs.com/package/quick.db)
 - [Canvas](https://www.npmjs.com/package/canvas)
-- [CurrencySystem](https://www.npmjs.com/package/currency-system)
+- [Currency System](https://www.npmjs.com/package/currency-system)
 
-## 📦 Instalação das Dependencias
+## 📦 Installation of Dependencies
 
 ```bash
-# Para Instalar as Dependencias use:
+# To install the dependencies use:
 $ npm install
 ```
 
 ```bash
-# Para Iniciar o Projeto:
+# To start the project:
 $ npm run start
 ```
