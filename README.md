@@ -10,7 +10,7 @@ A Bot fully focused on an economy system using **MongoDB** and **Quick.DB** and 
 
 ## 🛠️ Tools Used
 
-- [Discord.JS](https://www.npmjs.com/package/discord.js?source=post_page-----7b5fe27cb6fa------------------ ----)
+- [Discord.JS](https://www.npmjs.com/package/discord.js?source=post_page-----7b5fe27cb6fa----------------------)
 - [MongoDB](https://www.npmjs.com/package/mongoose)
 - [Quick.db](https://www.npmjs.com/package/quick.db)
 - [Canvas](https://www.npmjs.com/package/canvas)
